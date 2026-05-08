@@ -12,6 +12,14 @@ jobs:
     with:
       qmk_repo: bastardkb/bastardkb-qmk
       qmk_ref: bkb-procyon
+      # Wrap the parent dilemma config.h's POINTING_DEVICE_TASK_THROTTLE_MS=10
+      # define in an #ifndef guard so keymap-level overrides win. Empirical probe
+      # showed keymap config.h runs BEFORE the parent config.h in QMK's preprocessor
+      # chain, so without a guard the parent silently re-#defines after our override.
+      preparation_command: |
+        sed -i 's|^    #define POINTING_DEVICE_TASK_THROTTLE_MS 10|    #ifndef POINTING_DEVICE_TASK_THROTTLE_MS\n    #define POINTING_DEVICE_TASK_THROTTLE_MS 10\n    #endif|' qmk_firmware/keyboards/bastardkb/dilemma/config.h
+        echo "--- patched dilemma config.h ---"
+        grep -B1 -A3 'POINTING_DEVICE_TASK_THROTTLE_MS' qmk_firmware/keyboards/bastardkb/dilemma/config.h
 
   publish:
     name: 'QMK Userspace Publish'
