@@ -17,7 +17,15 @@
  */
 #pragma once
 
-#error "VANEWINDWARD_CONFIG_H_REACHED"
+#ifdef POINTING_DEVICE_TASK_THROTTLE_MS
+#  if POINTING_DEVICE_TASK_THROTTLE_MS == 10
+#    error "VANE: dilemma config.h ran BEFORE my keymap config.h (THROTTLE=10) — order is correct"
+#  else
+#    error "VANE: throttle has some other value before my override"
+#  endif
+#else
+#  error "VANE: my keymap config.h ran BEFORE dilemma config.h (no throttle defined yet)"
+#endif
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 #define SPLIT_LAYER_STATE_ENABLE
