@@ -20,6 +20,18 @@ jobs:
         sed -i 's|^    #define POINTING_DEVICE_TASK_THROTTLE_MS 10|    #ifndef POINTING_DEVICE_TASK_THROTTLE_MS\n    #define POINTING_DEVICE_TASK_THROTTLE_MS 10\n    #endif|' qmk_firmware/keyboards/bastardkb/dilemma/config.h
         echo "--- patched dilemma config.h ---"
         grep -B1 -A3 'POINTING_DEVICE_TASK_THROTTLE_MS' qmk_firmware/keyboards/bastardkb/dilemma/config.h
+        echo "--- inject probes into cirque_pinnacle.c (compiled for keymap target) ---"
+        cat > /tmp/probe.h <<'PROBE'
+        #if defined(POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE)
+        #error "VANE-CIRQUE-C: CURSOR_GLIDE IS defined when cirque_pinnacle.c compiles"
+        #else
+        #error "VANE-CIRQUE-C: CURSOR_GLIDE NOT defined when cirque_pinnacle.c compiles"
+        #endif
+        PROBE
+        # Inject the probe at top of cirque_pinnacle.c — it'll abort compile with our message
+        cat /tmp/probe.h qmk_firmware/drivers/sensors/cirque_pinnacle.c > /tmp/patched.c
+        mv /tmp/patched.c qmk_firmware/drivers/sensors/cirque_pinnacle.c
+        head -10 qmk_firmware/drivers/sensors/cirque_pinnacle.c
 
   publish:
     name: 'QMK Userspace Publish'
