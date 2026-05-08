@@ -17,21 +17,21 @@ jobs:
       # showed keymap config.h runs BEFORE the parent config.h in QMK's preprocessor
       # chain, so without a guard the parent silently re-#defines after our override.
       preparation_command: |
+        # Force clean rebuild — there's evidence the build is reusing cached .o
+        # files from prior runs / Docker image, so source-level patches aren't
+        # taking effect on driver code.
+        rm -rf qmk_firmware/.build
+        rm -rf .build
+        # Patch the parent dilemma config.h to #ifndef-guard the throttle define
+        # so keymap-level POINTING_DEVICE_TASK_THROTTLE_MS=1 actually wins.
         sed -i 's|^    #define POINTING_DEVICE_TASK_THROTTLE_MS 10|    #ifndef POINTING_DEVICE_TASK_THROTTLE_MS\n    #define POINTING_DEVICE_TASK_THROTTLE_MS 10\n    #endif|' qmk_firmware/keyboards/bastardkb/dilemma/config.h
         echo "--- patched dilemma config.h ---"
         grep -B1 -A3 'POINTING_DEVICE_TASK_THROTTLE_MS' qmk_firmware/keyboards/bastardkb/dilemma/config.h
-        echo "--- inject probes into cirque_pinnacle.c (compiled for keymap target) ---"
-        cat > /tmp/probe.h <<'PROBE'
-        #if defined(POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE)
-        #error "VANE-CIRQUE-C: CURSOR_GLIDE IS defined when cirque_pinnacle.c compiles"
-        #else
-        #error "VANE-CIRQUE-C: CURSOR_GLIDE NOT defined when cirque_pinnacle.c compiles"
-        #endif
-        PROBE
-        # Inject the probe at top of cirque_pinnacle.c — it'll abort compile with our message
-        cat /tmp/probe.h qmk_firmware/drivers/sensors/cirque_pinnacle.c > /tmp/patched.c
-        mv /tmp/patched.c qmk_firmware/drivers/sensors/cirque_pinnacle.c
-        head -10 qmk_firmware/drivers/sensors/cirque_pinnacle.c
+        # Touch the cirque source so make picks up a new mtime
+        touch qmk_firmware/drivers/sensors/cirque_pinnacle.c
+        touch qmk_firmware/drivers/sensors/cirque_pinnacle_gestures.c
+        touch qmk_firmware/quantum/pointing_device/pointing_device.c
+        touch qmk_firmware/quantum/pointing_device/pointing_device_gestures.c
 
   publish:
     name: 'QMK Userspace Publish'
