@@ -106,12 +106,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 #    endif // DILEMMA_AUTO_SNIPING_ON_LAYER
-
-#    ifdef POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE
-void keyboard_post_init_user(void) {
-    cirque_pinnacle_configure_cursor_glide(10.0f);
-}
-#    endif // POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE
 #endif     // POINTING_DEVICE_ENABLE
 
 #ifdef RGB_MATRIX_ENABLE
