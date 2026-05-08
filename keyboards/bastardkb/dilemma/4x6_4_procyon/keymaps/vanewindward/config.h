@@ -17,27 +17,8 @@
  */
 #pragma once
 
-#ifdef POINTING_DEVICE_TASK_THROTTLE_MS
-#  if POINTING_DEVICE_TASK_THROTTLE_MS == 10
-#    error "VANE: dilemma config.h ran BEFORE my keymap config.h (THROTTLE=10) — order is correct"
-#  else
-#    error "VANE: throttle has some other value before my override"
-#  endif
-#else
-#  error "VANE: my keymap config.h ran BEFORE dilemma config.h (no throttle defined yet)"
-#endif
-
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_LED_STATE_ENABLE
 
 #define ENCODER_RESOLUTION 4
-
-#undef POINTING_DEVICE_TASK_THROTTLE_MS
-#define POINTING_DEVICE_TASK_THROTTLE_MS 1
-
-#define CIRQUE_PINNACLE_TAP_ENABLE
-#define CIRQUE_PINNACLE_TAPPING_TERM 200
-#define CIRQUE_PINNACLE_TOUCH_DEBOUNCE 50
-
-#define POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE
