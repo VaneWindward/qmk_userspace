@@ -32,6 +32,23 @@ enum dilemma_keymap_layers {
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 
+// Home-row mods, GACS order (outer pinky → inner index = GUI / Alt / Ctrl / Shift).
+// Tap = letter, hold = mod. Shift on the index column makes inward rolls
+// safe from accidental capitalization.
+#define HRM_A LGUI_T(KC_A)
+#define HRM_S LALT_T(KC_S)
+#define HRM_D LCTL_T(KC_D)
+#define HRM_F LSFT_T(KC_F)
+#define HRM_J RSFT_T(KC_J)
+#define HRM_K RCTL_T(KC_K)
+#define HRM_L RALT_T(KC_L)
+#define HRM_SCLN RGUI_T(KC_SCLN)
+
+// Phase 2 (2026-05-11): layer-tap thumbs.
+// Tap = the key's normal value; hold ≥200 ms = enter the layer.
+#define LT_BSPC LT(LAYER_LOWER, KC_BSPC)   // left thumb: tap = Backspace, hold = LOWER
+#define LT_DEL  LT(LAYER_RAISE, KC_DEL)    // right thumb: tap = Delete,    hold = RAISE
+
 #ifndef POINTING_DEVICE_ENABLE
 #    define DRGSCRL KC_NO
 #    define DPI_MOD KC_NO
@@ -47,11 +64,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
         KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
+       CW_TOGG,   HRM_A,   HRM_S,   HRM_D,   HRM_F,    KC_G,       KC_H,   HRM_J,   HRM_K,   HRM_L,HRM_SCLN, KC_QUOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_LCTL,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_LALT,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                         KC_LALT, KC_BSPC,  KC_SPC,   LOWER,      RAISE,  KC_ENT, KC_DEL,  MS_BTN1
+                         KC_LALT, LT_BSPC,  KC_SPC, KC_LGUI,    MS_BTN1,  KC_ENT, LT_DEL,  MS_BTN1
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
   ),
 
@@ -97,6 +114,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //                    ╰───────────────────────────────────╯ ╰───────────────────────────────────╯
   ),
 };
+// clang-format on
+
+// Chordal Hold hand assignment.
+// 'L' = left-hand key, 'R' = right-hand key, '*' = either (wildcard).
+// Same-hand chords cancel the hold → no accidental mods on inward rolls.
+// Thumbs are wildcards so a held thumb-mod pairs with letters on either side.
+// clang-format off
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
+  'L', 'L', 'L', 'L', 'L', 'L',    'R', 'R', 'R', 'R', 'R', 'R',
+  'L', 'L', 'L', 'L', 'L', 'L',    'R', 'R', 'R', 'R', 'R', 'R',
+  'L', 'L', 'L', 'L', 'L', 'L',    'R', 'R', 'R', 'R', 'R', 'R',
+  'L', 'L', 'L', 'L', 'L', 'L',    'R', 'R', 'R', 'R', 'R', 'R',
+                  '*', '*', '*', '*',    '*', '*', '*', '*'
+);
 // clang-format on
 
 #ifdef POINTING_DEVICE_ENABLE

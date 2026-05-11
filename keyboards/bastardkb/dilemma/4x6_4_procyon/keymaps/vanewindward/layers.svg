@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 1280"
+     font-family="ui-sans-serif, -apple-system, system-ui, 'Helvetica Neue', sans-serif">
+  <defs>
+    <style>
+      .bg       { fill: #faf9f6; }
+      .panelbg  { fill: #ffffff; stroke: #e2e0d8; stroke-width: 1; rx: 8; ry: 8; }
+      .key      { fill: #ffffff; stroke: #3c3c3c; stroke-width: 1.2; rx: 5; ry: 5; }
+      .khrm     { fill: #fff3d6; stroke: #b07c00; stroke-width: 1.5; rx: 5; ry: 5; }
+      .klt      { fill: #dfeeff; stroke: #1a5cb0; stroke-width: 1.4; rx: 5; ry: 5; }
+      .kcaps    { fill: #ffe1ee; stroke: #b1306c; stroke-width: 1.4; rx: 5; ry: 5; }
+      .kms      { fill: #dff4e3; stroke: #2b7a3a; stroke-width: 1.2; rx: 5; ry: 5; }
+      .kfn      { fill: #ede8fa; stroke: #5b3fa8; stroke-width: 1.2; rx: 5; ry: 5; }
+      .knav     { fill: #d5edf0; stroke: #1f6e7a; stroke-width: 1.2; rx: 5; ry: 5; }
+      .knum     { fill: #ffe9d6; stroke: #b65a14; stroke-width: 1.2; rx: 5; ry: 5; }
+      .ksym     { fill: #f4e8d0; stroke: #8a6b1c; stroke-width: 1.2; rx: 5; ry: 5; }
+      .kmedia   { fill: #fae4e4; stroke: #a83a3a; stroke-width: 1.2; rx: 5; ry: 5; }
+      .kmaint   { fill: #ffdcdc; stroke: #b22222; stroke-width: 1.4; rx: 5; ry: 5; }
+      .kblank   { fill: #f3f3f0; stroke: #b8b8b0; stroke-width: 0.8; stroke-dasharray: 2 2; rx: 5; ry: 5; }
+      .kpass    { fill: #ffffff; stroke: #aaa; stroke-width: 0.8; stroke-dasharray: 3 2; rx: 5; ry: 5; }
+      .ttl      { font-size: 18px; font-weight: 700; fill: #1a1a1a; }
+      .sub      { font-size: 12px; fill: #555; }
+      .panel-h  { font-size: 16px; font-weight: 700; fill: #1a1a1a; }
+      .panel-sub{ font-size: 11px; fill: #666; }
+      .access-ok { font-size: 11px; fill: #1a6630; font-weight: 700; }
+      .access-no { font-size: 11px; fill: #a02020; font-weight: 700; }
+      .lbl      { font-size: 12px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lblsm    { font-size: 10px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lblxs    { font-size: 8px;  font-weight: 600; fill: #1a1a1a; text-anchor: middle; }
+      .lblmute  { font-size: 9px;  fill: #999; text-anchor: middle; }
+      .hold     { font-size: 8px;  fill: #b07c00; text-anchor: middle; font-weight: 700; }
+      .holdlt   { font-size: 7px;  fill: #1a5cb0; text-anchor: middle; font-weight: 700; }
+      .leg      { font-size: 11px; fill: #222; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="940" height="1280"/>
+
+  <!-- ============= HEADER ============= -->
+  <text x="20" y="28" class="ttl">vanewindward — all 4 layers + access cheatsheet</text>
+  <text x="20" y="46" class="sub">Bastardkb Procyon · Phase 1 (2026-05-11)</text>
+
+  <!-- ============================================================== -->
+  <!-- HELPER: each panel = 940 wide, ~285 tall                          -->
+  <!-- Grid origin (per panel): keys at x = 30..325 (left), 355..650 (right)
+       Thumbs centered below.
+       Per layer the panel-internal y is structured:
+         y +0      panel border top
+         y +8      title
+         y +28     access line
+         y +50     row 1 of 4
+         y +90     row 2
+         y +130    row 3
+         y +170    row 4
+         y +220    thumbs
+         y +275    panel border bottom (height ≈ 280)
+  -->
+  <!-- ============================================================== -->
+
+  <!-- ============= PANEL 1: BASE (y=60) ============= -->
+  <g transform="translate(0,60)">
+    <rect class="panelbg" x="10" y="0" width="920" height="285"/>
+    <text x="25" y="22" class="panel-h">1. BASE layer</text>
+    <text x="120" y="22" class="access-ok">access: always on (this is the default)</text>
+    <text x="25" y="40" class="panel-sub">QWERTY letters · home-row mods (yellow) · Caps Word (pink) · layer-tap to POINTER (blue)</text>
+
+    <!-- Row 1 -->
+    <g><rect class="key"   x="30"  y="55" width="40" height="40"/><text class="lblsm" x="50"  y="80">Esc</text></g>
+    <g><rect class="key"   x="74"  y="55" width="40" height="40"/><text class="lbl"   x="94"  y="82">1</text></g>
+    <g><rect class="key"   x="118" y="55" width="40" height="40"/><text class="lbl"   x="138" y="82">2</text></g>
+    <g><rect class="key"   x="162" y="55" width="40" height="40"/><text class="lbl"   x="182" y="82">3</text></g>
+    <g><rect class="key"   x="206" y="55" width="40" height="40"/><text class="lbl"   x="226" y="82">4</text></g>
+    <g><rect class="key"   x="250" y="55" width="40" height="40"/><text class="lbl"   x="270" y="82">5</text></g>
+    <g><rect class="key"   x="355" y="55" width="40" height="40"/><text class="lbl"   x="375" y="82">6</text></g>
+    <g><rect class="key"   x="399" y="55" width="40" height="40"/><text class="lbl"   x="419" y="82">7</text></g>
+    <g><rect class="key"   x="443" y="55" width="40" height="40"/><text class="lbl"   x="463" y="82">8</text></g>
+    <g><rect class="key"   x="487" y="55" width="40" height="40"/><text class="lbl"   x="507" y="82">9</text></g>
+    <g><rect class="key"   x="531" y="55" width="40" height="40"/><text class="lbl"   x="551" y="82">0</text></g>
+    <g><rect class="key"   x="575" y="55" width="40" height="40"/><text class="lbl"   x="595" y="82">-</text></g>
+
+    <!-- Row 2 -->
+    <g><rect class="key"   x="30"  y="99" width="40" height="40"/><text class="lblsm" x="50"  y="124">Tab</text></g>
+    <g><rect class="key"   x="74"  y="99" width="40" height="40"/><text class="lbl"   x="94"  y="126">Q</text></g>
+    <g><rect class="key"   x="118" y="99" width="40" height="40"/><text class="lbl"   x="138" y="126">W</text></g>
+    <g><rect class="key"   x="162" y="99" width="40" height="40"/><text class="lbl"   x="182" y="126">E</text></g>
+    <g><rect class="key"   x="206" y="99" width="40" height="40"/><text class="lbl"   x="226" y="126">R</text></g>
+    <g><rect class="key"   x="250" y="99" width="40" height="40"/><text class="lbl"   x="270" y="126">T</text></g>
+    <g><rect class="key"   x="355" y="99" width="40" height="40"/><text class="lbl"   x="375" y="126">Y</text></g>
+    <g><rect class="key"   x="399" y="99" width="40" height="40"/><text class="lbl"   x="419" y="126">U</text></g>
+    <g><rect class="key"   x="443" y="99" width="40" height="40"/><text class="lbl"   x="463" y="126">I</text></g>
+    <g><rect class="key"   x="487" y="99" width="40" height="40"/><text class="lbl"   x="507" y="126">O</text></g>
+    <g><rect class="key"   x="531" y="99" width="40" height="40"/><text class="lbl"   x="551" y="126">P</text></g>
+    <g><rect class="key"   x="575" y="99" width="40" height="40"/><text class="lbl"   x="595" y="126">\</text></g>
+
+    <!-- Row 3 HOME -->
+    <g><rect class="kcaps" x="30"  y="143" width="40" height="40"/><text class="lblxs" x="50"  y="166">Caps Wd</text></g>
+    <g><rect class="khrm"  x="74"  y="143" width="40" height="40"/><text class="lbl"   x="94"  y="166">A</text><text class="hold" x="94"  y="178">⌘</text></g>
+    <g><rect class="khrm"  x="118" y="143" width="40" height="40"/><text class="lbl"   x="138" y="166">S</text><text class="hold" x="138" y="178">⌥</text></g>
+    <g><rect class="khrm"  x="162" y="143" width="40" height="40"/><text class="lbl"   x="182" y="166">D</text><text class="hold" x="182" y="178">⌃</text></g>
+    <g><rect class="khrm"  x="206" y="143" width="40" height="40"/><text class="lbl"   x="226" y="166">F</text><text class="hold" x="226" y="178">⇧</text></g>
+    <g><rect class="key"   x="250" y="143" width="40" height="40"/><text class="lbl"   x="270" y="170">G</text></g>
+    <g><rect class="key"   x="355" y="143" width="40" height="40"/><text class="lbl"   x="375" y="170">H</text></g>
+    <g><rect class="khrm"  x="399" y="143" width="40" height="40"/><text class="lbl"   x="419" y="166">J</text><text class="hold" x="419" y="178">⇧</text></g>
+    <g><rect class="khrm"  x="443" y="143" width="40" height="40"/><text class="lbl"   x="463" y="166">K</text><text class="hold" x="463" y="178">⌃</text></g>
+    <g><rect class="khrm"  x="487" y="143" width="40" height="40"/><text class="lbl"   x="507" y="166">L</text><text class="hold" x="507" y="178">⌥</text></g>
+    <g><rect class="khrm"  x="531" y="143" width="40" height="40"/><text class="lbl"   x="551" y="166">;</text><text class="hold" x="551" y="178">⌘</text></g>
+    <g><rect class="key"   x="575" y="143" width="40" height="40"/><text class="lbl"   x="595" y="170">'</text></g>
+
+    <!-- Row 4 -->
+    <g><rect class="key"   x="30"  y="187" width="40" height="40"/><text class="lblsm" x="50"  y="212">Ctrl</text></g>
+    <g><rect class="klt"   x="74"  y="187" width="40" height="40"/><text class="lbl"   x="94"  y="210">Z</text><text class="holdlt" x="94"  y="222">→Ptr</text></g>
+    <g><rect class="key"   x="118" y="187" width="40" height="40"/><text class="lbl"   x="138" y="214">X</text></g>
+    <g><rect class="key"   x="162" y="187" width="40" height="40"/><text class="lbl"   x="182" y="214">C</text></g>
+    <g><rect class="key"   x="206" y="187" width="40" height="40"/><text class="lbl"   x="226" y="214">V</text></g>
+    <g><rect class="key"   x="250" y="187" width="40" height="40"/><text class="lbl"   x="270" y="214">B</text></g>
+    <g><rect class="key"   x="355" y="187" width="40" height="40"/><text class="lbl"   x="375" y="214">N</text></g>
+    <g><rect class="key"   x="399" y="187" width="40" height="40"/><text class="lbl"   x="419" y="214">M</text></g>
+    <g><rect class="key"   x="443" y="187" width="40" height="40"/><text class="lbl"   x="463" y="214">,</text></g>
+    <g><rect class="key"   x="487" y="187" width="40" height="40"/><text class="lbl"   x="507" y="214">.</text></g>
+    <g><rect class="klt"   x="531" y="187" width="40" height="40"/><text class="lbl"   x="551" y="210">/</text><text class="holdlt" x="551" y="222">→Ptr</text></g>
+    <g><rect class="key"   x="575" y="187" width="40" height="40"/><text class="lblsm" x="595" y="212">Alt</text></g>
+
+    <!-- Thumbs -->
+    <g><rect class="key"   x="140" y="235" width="40" height="40"/><text class="lblsm" x="160" y="260">Alt</text></g>
+    <g><rect class="klt"   x="184" y="235" width="40" height="40"/><text class="lblxs" x="204" y="254">Bksp</text><text class="holdlt" x="204" y="268">→Low</text></g>
+    <g><rect class="key"   x="228" y="235" width="40" height="40"/><text class="lblsm" x="248" y="260">Spc</text></g>
+    <g><rect class="key"   x="272" y="235" width="40" height="40"/><text class="lblsm" x="292" y="260">GUI</text></g>
+    <g><rect class="kms"   x="377" y="235" width="40" height="40"/><text class="lblsm" x="397" y="260">MB1</text></g>
+    <g><rect class="key"   x="421" y="235" width="40" height="40"/><text class="lblsm" x="441" y="260">Ent</text></g>
+    <g><rect class="klt"   x="465" y="235" width="40" height="40"/><text class="lblxs" x="485" y="254">Del</text><text class="holdlt" x="485" y="268">→Rai</text></g>
+    <g><rect class="kms"   x="509" y="235" width="40" height="40"/><text class="lblsm" x="529" y="260">MB1</text></g>
+
+    <!-- right-side legend -->
+    <text x="670" y="75"  class="leg">Letters: tap = type</text>
+    <text x="670" y="95"  class="leg">Yellow: tap = letter,</text>
+    <text x="670" y="111" class="leg">    hold ≥200ms = mod</text>
+    <text x="670" y="131" class="leg">Pink: Caps Word</text>
+    <text x="670" y="151" class="leg">Blue: hold → POINTER</text>
+    <text x="670" y="171" class="leg">Green: MB1 (click)</text>
+    <text x="670" y="195" class="leg" font-weight="700">Rule: mod ⇔ key</text>
+    <text x="670" y="211" class="leg">use OPPOSITE hand.</text>
+  </g>
+
+  <!-- ============= PANEL 2: POINTER (y=360) ============= -->
+  <g transform="translate(0,360)">
+    <rect class="panelbg" x="10" y="0" width="920" height="285"/>
+    <text x="25" y="22" class="panel-h">2. POINTER layer</text>
+    <text x="120" y="22" class="access-ok">access: hold Z (left) or hold / (right) — release to exit</text>
+    <text x="25" y="40" class="panel-sub">Trackpad &amp; mouse controls · mirrored modifiers · maintenance keys (EE_CLR, QK_BOOT)</text>
+
+    <!-- Row 1: all blank -->
+    <g><rect class="kblank" x="30"  y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="74"  y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="118" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="162" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="206" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="250" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="355" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="399" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="443" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="487" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="531" y="55" width="40" height="40"/></g>
+    <g><rect class="kblank" x="575" y="55" width="40" height="40"/></g>
+
+    <!-- Row 2: DPI controls -->
+    <g><rect class="kblank" x="30"  y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="74"  y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="118" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="162" y="99" width="40" height="40"/></g>
+    <g><rect class="kms"    x="206" y="99" width="40" height="40"/><text class="lblxs" x="226" y="122">DPI</text><text class="lblxs" x="226" y="132">cycle</text></g>
+    <g><rect class="kms"    x="250" y="99" width="40" height="40"/><text class="lblxs" x="270" y="122">Snipe</text><text class="lblxs" x="270" y="132">DPI</text></g>
+    <g><rect class="kms"    x="355" y="99" width="40" height="40"/><text class="lblxs" x="375" y="122">Snipe</text><text class="lblxs" x="375" y="132">DPI</text></g>
+    <g><rect class="kms"    x="399" y="99" width="40" height="40"/><text class="lblxs" x="419" y="122">DPI</text><text class="lblxs" x="419" y="132">cycle</text></g>
+    <g><rect class="kblank" x="443" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="487" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="531" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="575" y="99" width="40" height="40"/></g>
+
+    <!-- Row 3: mirrored mods (one-shot style) -->
+    <g><rect class="kblank" x="30"  y="143" width="40" height="40"/></g>
+    <g><rect class="kfn"    x="74"  y="143" width="40" height="40"/><text class="lblsm" x="94"  y="168">⌘</text></g>
+    <g><rect class="kfn"    x="118" y="143" width="40" height="40"/><text class="lblsm" x="138" y="168">⌥</text></g>
+    <g><rect class="kfn"    x="162" y="143" width="40" height="40"/><text class="lblsm" x="182" y="168">⌃</text></g>
+    <g><rect class="kfn"    x="206" y="143" width="40" height="40"/><text class="lblsm" x="226" y="168">⇧</text></g>
+    <g><rect class="kblank" x="250" y="143" width="40" height="40"/></g>
+    <g><rect class="kblank" x="355" y="143" width="40" height="40"/></g>
+    <g><rect class="kfn"    x="399" y="143" width="40" height="40"/><text class="lblsm" x="419" y="168">⇧</text></g>
+    <g><rect class="kfn"    x="443" y="143" width="40" height="40"/><text class="lblsm" x="463" y="168">⌃</text></g>
+    <g><rect class="kfn"    x="487" y="143" width="40" height="40"/><text class="lblsm" x="507" y="168">⌥</text></g>
+    <g><rect class="kfn"    x="531" y="143" width="40" height="40"/><text class="lblsm" x="551" y="168">⌘</text></g>
+    <g><rect class="kblank" x="575" y="143" width="40" height="40"/></g>
+
+    <!-- Row 4: maint + scroll/snipe -->
+    <g><rect class="kblank" x="30"  y="187" width="40" height="40"/></g>
+    <g><rect class="kpass"  x="74"  y="187" width="40" height="40"/><text class="lblmute" x="94" y="212">(held)</text></g>
+    <g><rect class="kms"    x="118" y="187" width="40" height="40"/><text class="lblxs"   x="138" y="210">Drag</text><text class="lblxs" x="138" y="220">Scroll</text></g>
+    <g><rect class="kms"    x="162" y="187" width="40" height="40"/><text class="lblxs"   x="182" y="210">Snipe</text></g>
+    <g><rect class="kmaint" x="206" y="187" width="40" height="40"/><text class="lblxs"   x="226" y="210">EE</text><text class="lblxs" x="226" y="220">CLR</text></g>
+    <g><rect class="kmaint" x="250" y="187" width="40" height="40"/><text class="lblxs"   x="270" y="210">QK</text><text class="lblxs" x="270" y="220">BOOT</text></g>
+    <g><rect class="kmaint" x="355" y="187" width="40" height="40"/><text class="lblxs"   x="375" y="210">QK</text><text class="lblxs" x="375" y="220">BOOT</text></g>
+    <g><rect class="kmaint" x="399" y="187" width="40" height="40"/><text class="lblxs"   x="419" y="210">EE</text><text class="lblxs" x="419" y="220">CLR</text></g>
+    <g><rect class="kms"    x="443" y="187" width="40" height="40"/><text class="lblxs"   x="463" y="210">Snipe</text></g>
+    <g><rect class="kms"    x="487" y="187" width="40" height="40"/><text class="lblxs"   x="507" y="210">Drag</text><text class="lblxs" x="507" y="220">Scroll</text></g>
+    <g><rect class="kpass"  x="531" y="187" width="40" height="40"/><text class="lblmute" x="551" y="212">(held)</text></g>
+    <g><rect class="kblank" x="575" y="187" width="40" height="40"/></g>
+
+    <!-- Thumbs: mouse buttons -->
+    <g><rect class="kblank" x="140" y="235" width="40" height="40"/></g>
+    <g><rect class="kms"    x="184" y="235" width="40" height="40"/><text class="lblsm" x="204" y="260">MB2</text></g>
+    <g><rect class="kms"    x="228" y="235" width="40" height="40"/><text class="lblsm" x="248" y="260">MB1</text></g>
+    <g><rect class="kms"    x="272" y="235" width="40" height="40"/><text class="lblsm" x="292" y="260">MB3</text></g>
+    <g><rect class="kms"    x="377" y="235" width="40" height="40"/><text class="lblsm" x="397" y="260">MB3</text></g>
+    <g><rect class="kms"    x="421" y="235" width="40" height="40"/><text class="lblsm" x="441" y="260">MB1</text></g>
+    <g><rect class="kms"    x="465" y="235" width="40" height="40"/><text class="lblsm" x="485" y="260">MB2</text></g>
+    <g><rect class="kblank" x="509" y="235" width="40" height="40"/></g>
+
+    <text x="670" y="75"  class="leg">Trackpad knobs:</text>
+    <text x="670" y="93"  class="leg">DPI = cursor speed</text>
+    <text x="670" y="109" class="leg">Snipe = precision DPI</text>
+    <text x="670" y="125" class="leg">DragScroll = pad→scroll</text>
+    <text x="670" y="141" class="leg">Snipe = press to enable</text>
+    <text x="670" y="165" class="leg" fill="#a02020" font-weight="700">EE_CLR wipes EEPROM</text>
+    <text x="670" y="181" class="leg" fill="#a02020" font-weight="700">QK_BOOT → bootloader</text>
+    <text x="670" y="205" class="leg">Thumbs = mouse btns</text>
+    <text x="670" y="221" class="leg">  MB1 left · MB2 right</text>
+    <text x="670" y="237" class="leg">  MB3 middle</text>
+  </g>
+
+  <!-- ============= PANEL 3: LOWER (y=660) ============= -->
+  <g transform="translate(0,660)">
+    <rect class="panelbg" x="10" y="0" width="920" height="285"/>
+    <text x="25" y="22" class="panel-h">3. LOWER layer</text>
+    <text x="155" y="22" class="access-ok">access: hold left-thumb Bksp (tap = Backspace, hold = LOWER) · Phase 2</text>
+    <text x="25" y="40" class="panel-sub">Symbols (top row) · numpad (right hand) · RGB controls (outer column) · backup mods (home row)</text>
+
+    <!-- Row 1: shifted symbols -->
+    <g><rect class="ksym" x="30"  y="55" width="40" height="40"/><text class="lbl" x="50"  y="82">~</text></g>
+    <g><rect class="ksym" x="74"  y="55" width="40" height="40"/><text class="lbl" x="94"  y="82">!</text></g>
+    <g><rect class="ksym" x="118" y="55" width="40" height="40"/><text class="lbl" x="138" y="82">@</text></g>
+    <g><rect class="ksym" x="162" y="55" width="40" height="40"/><text class="lbl" x="182" y="82">#</text></g>
+    <g><rect class="ksym" x="206" y="55" width="40" height="40"/><text class="lbl" x="226" y="82">$</text></g>
+    <g><rect class="ksym" x="250" y="55" width="40" height="40"/><text class="lbl" x="270" y="82">%</text></g>
+    <g><rect class="ksym" x="355" y="55" width="40" height="40"/><text class="lbl" x="375" y="82">^</text></g>
+    <g><rect class="ksym" x="399" y="55" width="40" height="40"/><text class="lbl" x="419" y="82">&amp;</text></g>
+    <g><rect class="ksym" x="443" y="55" width="40" height="40"/><text class="lbl" x="463" y="82">*</text></g>
+    <g><rect class="ksym" x="487" y="55" width="40" height="40"/><text class="lbl" x="507" y="82">(</text></g>
+    <g><rect class="ksym" x="531" y="55" width="40" height="40"/><text class="lbl" x="551" y="82">)</text></g>
+    <g><rect class="ksym" x="575" y="55" width="40" height="40"/><text class="lbl" x="595" y="82">_</text></g>
+
+    <!-- Row 2: RGB next + numpad top + brackets -->
+    <g><rect class="kmedia" x="30"  y="99" width="40" height="40"/><text class="lblxs" x="50" y="122">RGB</text><text class="lblxs" x="50" y="132">Next</text></g>
+    <g><rect class="kblank" x="74"  y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="118" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="162" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="206" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="250" y="99" width="40" height="40"/></g>
+    <g><rect class="ksym"   x="355" y="99" width="40" height="40"/><text class="lbl" x="375" y="126">[</text></g>
+    <g><rect class="knum"   x="399" y="99" width="40" height="40"/><text class="lbl" x="419" y="126">7</text></g>
+    <g><rect class="knum"   x="443" y="99" width="40" height="40"/><text class="lbl" x="463" y="126">8</text></g>
+    <g><rect class="knum"   x="487" y="99" width="40" height="40"/><text class="lbl" x="507" y="126">9</text></g>
+    <g><rect class="ksym"   x="531" y="99" width="40" height="40"/><text class="lbl" x="551" y="126">]</text></g>
+    <g><rect class="kblank" x="575" y="99" width="40" height="40"/></g>
+
+    <!-- Row 3: RGB toggle + backup mods + numpad middle -->
+    <g><rect class="kmedia" x="30"  y="143" width="40" height="40"/><text class="lblxs" x="50" y="166">RGB</text><text class="lblxs" x="50" y="176">Toggl</text></g>
+    <g><rect class="kfn"    x="74"  y="143" width="40" height="40"/><text class="lblsm" x="94"  y="168">⌘</text></g>
+    <g><rect class="kfn"    x="118" y="143" width="40" height="40"/><text class="lblsm" x="138" y="168">⌥</text></g>
+    <g><rect class="kfn"    x="162" y="143" width="40" height="40"/><text class="lblsm" x="182" y="168">⌃</text></g>
+    <g><rect class="kfn"    x="206" y="143" width="40" height="40"/><text class="lblsm" x="226" y="168">⇧</text></g>
+    <g><rect class="kblank" x="250" y="143" width="40" height="40"/></g>
+    <g><rect class="ksym"   x="355" y="143" width="40" height="40"/><text class="lbl" x="375" y="170">+</text></g>
+    <g><rect class="knum"   x="399" y="143" width="40" height="40"/><text class="lbl" x="419" y="170">4</text></g>
+    <g><rect class="knum"   x="443" y="143" width="40" height="40"/><text class="lbl" x="463" y="170">5</text></g>
+    <g><rect class="knum"   x="487" y="143" width="40" height="40"/><text class="lbl" x="507" y="170">6</text></g>
+    <g><rect class="ksym"   x="531" y="143" width="40" height="40"/><text class="lbl" x="551" y="170">-</text></g>
+    <g><rect class="ksym"   x="575" y="143" width="40" height="40"/><text class="lbl" x="595" y="170">=</text></g>
+
+    <!-- Row 4: RGB prev + numpad bottom -->
+    <g><rect class="kmedia" x="30"  y="187" width="40" height="40"/><text class="lblxs" x="50" y="210">RGB</text><text class="lblxs" x="50" y="220">Prev</text></g>
+    <g><rect class="kblank" x="74"  y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="118" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="162" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="206" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="250" y="187" width="40" height="40"/></g>
+    <g><rect class="ksym"   x="355" y="187" width="40" height="40"/><text class="lbl" x="375" y="214">*</text></g>
+    <g><rect class="knum"   x="399" y="187" width="40" height="40"/><text class="lbl" x="419" y="214">1</text></g>
+    <g><rect class="knum"   x="443" y="187" width="40" height="40"/><text class="lbl" x="463" y="214">2</text></g>
+    <g><rect class="knum"   x="487" y="187" width="40" height="40"/><text class="lbl" x="507" y="214">3</text></g>
+    <g><rect class="ksym"   x="531" y="187" width="40" height="40"/><text class="lbl" x="551" y="214">/</text></g>
+    <g><rect class="ksym"   x="575" y="187" width="40" height="40"/><text class="lbl" x="595" y="214">.</text></g>
+
+    <!-- Thumbs (mostly transparent / unused on LOWER) -->
+    <g><rect class="kblank" x="140" y="235" width="40" height="40"/></g>
+    <g><rect class="kblank" x="184" y="235" width="40" height="40"/></g>
+    <g><rect class="kblank" x="228" y="235" width="40" height="40"/></g>
+    <g><rect class="kpass"  x="272" y="235" width="40" height="40"/><text class="lblmute" x="292" y="260">GUI</text></g>
+    <g><rect class="kblank" x="377" y="235" width="40" height="40"/></g>
+    <g><rect class="kpass"  x="421" y="235" width="40" height="40"/><text class="lblmute" x="441" y="260">Ent</text></g>
+    <g><rect class="kblank" x="465" y="235" width="40" height="40"/></g>
+    <g><rect class="kblank" x="509" y="235" width="40" height="40"/></g>
+
+    <text x="670" y="75"  class="leg">Tan: shifted symbols</text>
+    <text x="670" y="91"  class="leg">Orange: numpad digits</text>
+    <text x="670" y="107" class="leg">Red: RGB controls</text>
+    <text x="670" y="123" class="leg">Purple: backup mods</text>
+    <text x="670" y="139" class="leg">Dashed: not bound</text>
+    <text x="670" y="155" class="leg">White-dashed: transparent</text>
+    <text x="670" y="171" class="leg">  (falls through to BASE)</text>
+    <text x="670" y="200" class="leg" fill="#a02020" font-weight="700">Currently unreachable.</text>
+    <text x="670" y="216" class="leg">Wire it up by putting</text>
+    <text x="670" y="232" class="leg">LT(LOWER,KC_BSPC) on</text>
+    <text x="670" y="248" class="leg">the left Bksp thumb.</text>
+  </g>
+
+  <!-- ============= PANEL 4: RAISE (y=960) ============= -->
+  <g transform="translate(0,960)">
+    <rect class="panelbg" x="10" y="0" width="920" height="285"/>
+    <text x="25" y="22" class="panel-h">4. RAISE layer</text>
+    <text x="155" y="22" class="access-ok">access: hold right-thumb Del (tap = Delete, hold = RAISE) · Phase 2</text>
+    <text x="25" y="40" class="panel-sub">F-keys (top row) · arrow cluster + Home/End/PgUp/PgDn (left) · media + mirrored mods (right)</text>
+
+    <!-- Row 1: F-keys -->
+    <g><rect class="kfn" x="30"  y="55" width="40" height="40"/><text class="lblsm" x="50"  y="80">F12</text></g>
+    <g><rect class="kfn" x="74"  y="55" width="40" height="40"/><text class="lblsm" x="94"  y="80">F1</text></g>
+    <g><rect class="kfn" x="118" y="55" width="40" height="40"/><text class="lblsm" x="138" y="80">F2</text></g>
+    <g><rect class="kfn" x="162" y="55" width="40" height="40"/><text class="lblsm" x="182" y="80">F3</text></g>
+    <g><rect class="kfn" x="206" y="55" width="40" height="40"/><text class="lblsm" x="226" y="80">F4</text></g>
+    <g><rect class="kfn" x="250" y="55" width="40" height="40"/><text class="lblsm" x="270" y="80">F5</text></g>
+    <g><rect class="kfn" x="355" y="55" width="40" height="40"/><text class="lblsm" x="375" y="80">F6</text></g>
+    <g><rect class="kfn" x="399" y="55" width="40" height="40"/><text class="lblsm" x="419" y="80">F7</text></g>
+    <g><rect class="kfn" x="443" y="55" width="40" height="40"/><text class="lblsm" x="463" y="80">F8</text></g>
+    <g><rect class="kfn" x="487" y="55" width="40" height="40"/><text class="lblsm" x="507" y="80">F9</text></g>
+    <g><rect class="kfn" x="531" y="55" width="40" height="40"/><text class="lblsm" x="551" y="80">F10</text></g>
+    <g><rect class="kfn" x="575" y="55" width="40" height="40"/><text class="lblsm" x="595" y="80">F11</text></g>
+
+    <!-- Row 2: media next + vol up -->
+    <g><rect class="kmedia" x="30"  y="99" width="40" height="40"/><text class="lblxs" x="50" y="125">Next</text></g>
+    <g><rect class="kblank" x="74"  y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="118" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="162" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="206" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="250" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="355" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="399" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="443" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="487" y="99" width="40" height="40"/></g>
+    <g><rect class="kblank" x="531" y="99" width="40" height="40"/></g>
+    <g><rect class="kmedia" x="575" y="99" width="40" height="40"/><text class="lblxs" x="595" y="120">Vol</text><text class="lblxs" x="595" y="132">Up</text></g>
+
+    <!-- Row 3: play + arrows + mirrored mods + mute -->
+    <g><rect class="kmedia" x="30"  y="143" width="40" height="40"/><text class="lblxs" x="50" y="168">Play</text></g>
+    <g><rect class="knav"   x="74"  y="143" width="40" height="40"/><text class="lbl"   x="94"  y="170">←</text></g>
+    <g><rect class="knav"   x="118" y="143" width="40" height="40"/><text class="lbl"   x="138" y="170">↑</text></g>
+    <g><rect class="knav"   x="162" y="143" width="40" height="40"/><text class="lbl"   x="182" y="170">↓</text></g>
+    <g><rect class="knav"   x="206" y="143" width="40" height="40"/><text class="lbl"   x="226" y="170">→</text></g>
+    <g><rect class="kblank" x="250" y="143" width="40" height="40"/></g>
+    <g><rect class="kblank" x="355" y="143" width="40" height="40"/></g>
+    <g><rect class="kfn"    x="399" y="143" width="40" height="40"/><text class="lblsm" x="419" y="168">⇧</text></g>
+    <g><rect class="kfn"    x="443" y="143" width="40" height="40"/><text class="lblsm" x="463" y="168">⌃</text></g>
+    <g><rect class="kfn"    x="487" y="143" width="40" height="40"/><text class="lblsm" x="507" y="168">⌥</text></g>
+    <g><rect class="kfn"    x="531" y="143" width="40" height="40"/><text class="lblsm" x="551" y="168">⌘</text></g>
+    <g><rect class="kmedia" x="575" y="143" width="40" height="40"/><text class="lblxs" x="595" y="168">Mute</text></g>
+
+    <!-- Row 4: prev + home/pgup/pgdn/end + vol down -->
+    <g><rect class="kmedia" x="30"  y="187" width="40" height="40"/><text class="lblxs" x="50" y="212">Prev</text></g>
+    <g><rect class="knav"   x="74"  y="187" width="40" height="40"/><text class="lblxs" x="94"  y="212">Home</text></g>
+    <g><rect class="knav"   x="118" y="187" width="40" height="40"/><text class="lblxs" x="138" y="212">PgUp</text></g>
+    <g><rect class="knav"   x="162" y="187" width="40" height="40"/><text class="lblxs" x="182" y="212">PgDn</text></g>
+    <g><rect class="knav"   x="206" y="187" width="40" height="40"/><text class="lblxs" x="226" y="212">End</text></g>
+    <g><rect class="kblank" x="250" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="355" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="399" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="443" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="487" y="187" width="40" height="40"/></g>
+    <g><rect class="kblank" x="531" y="187" width="40" height="40"/></g>
+    <g><rect class="kmedia" x="575" y="187" width="40" height="40"/><text class="lblxs" x="595" y="208">Vol</text><text class="lblxs" x="595" y="220">Dn</text></g>
+
+    <!-- Thumbs (mostly transparent) -->
+    <g><rect class="kblank" x="140" y="235" width="40" height="40"/></g>
+    <g><rect class="kpass"  x="184" y="235" width="40" height="40"/><text class="lblmute" x="204" y="260">Bksp</text></g>
+    <g><rect class="kpass"  x="228" y="235" width="40" height="40"/><text class="lblmute" x="248" y="260">Spc</text></g>
+    <g><rect class="kblank" x="272" y="235" width="40" height="40"/></g>
+    <g><rect class="kpass"  x="377" y="235" width="40" height="40"/><text class="lblmute" x="397" y="260">MB1</text></g>
+    <g><rect class="kblank" x="421" y="235" width="40" height="40"/></g>
+    <g><rect class="kblank" x="465" y="235" width="40" height="40"/></g>
+    <g><rect class="kblank" x="509" y="235" width="40" height="40"/></g>
+
+    <text x="670" y="75"  class="leg">Purple: F-keys</text>
+    <text x="670" y="91"  class="leg">Teal: navigation</text>
+    <text x="670" y="107" class="leg">  arrows + Home/End</text>
+    <text x="670" y="123" class="leg">  + PgUp/PgDn</text>
+    <text x="670" y="139" class="leg">Red: media + RGB</text>
+    <text x="670" y="155" class="leg">Purple home row =</text>
+    <text x="670" y="171" class="leg">  right-hand mods</text>
+    <text x="670" y="200" class="leg" fill="#a02020" font-weight="700">Currently unreachable.</text>
+    <text x="670" y="216" class="leg">Wire it up by putting</text>
+    <text x="670" y="232" class="leg">LT(RAISE,KC_DEL) on</text>
+    <text x="670" y="248" class="leg">the right Del thumb.</text>
+  </g>
+
+  <text x="920" y="1265" class="sub" text-anchor="end">layers.svg · vanewindward · 2026-05-11</text>
+</svg>

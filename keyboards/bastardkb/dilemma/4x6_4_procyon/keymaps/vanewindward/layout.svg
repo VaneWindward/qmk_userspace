@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 760"
+     font-family="ui-sans-serif, -apple-system, system-ui, 'Helvetica Neue', sans-serif">
+  <defs>
+    <style>
+      .bg     { fill: #faf9f6; }
+      .key    { fill: #ffffff; stroke: #3c3c3c; stroke-width: 1.4; rx: 7; ry: 7; }
+      .khrm   { fill: #fff3d6; stroke: #b07c00; stroke-width: 1.8; rx: 7; ry: 7; }
+      .klt    { fill: #dfeeff; stroke: #1a5cb0; stroke-width: 1.6; rx: 7; ry: 7; }
+      .kcaps  { fill: #ffe1ee; stroke: #b1306c; stroke-width: 1.6; rx: 7; ry: 7; }
+      .kms    { fill: #dff4e3; stroke: #2b7a3a; stroke-width: 1.4; rx: 7; ry: 7; }
+      .kthumb { fill: #f1efea; stroke: #555; stroke-width: 1.3; rx: 7; ry: 7; }
+      .knomod { fill: #f8f8f6; stroke: #888; stroke-width: 1.1; rx: 7; ry: 7; }
+      .ttl    { font-size: 18px; font-weight: 700; fill: #1a1a1a; }
+      .sub    { font-size: 12px; fill: #555; }
+      .h2     { font-size: 14px; font-weight: 700; fill: #222; }
+      .lbl    { font-size: 16px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lblsm  { font-size: 13px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .hold   { font-size: 11px; fill: #b07c00; text-anchor: middle; font-weight: 700; }
+      .holdlt { font-size: 9px;  fill: #1a5cb0; text-anchor: middle; font-weight: 700; }
+      .leg    { font-size: 12px; fill: #222; }
+      .legsm  { font-size: 11px; fill: #444; }
+      .footer { font-size: 11px; fill: #777; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="940" height="760"/>
+
+  <!-- HEADER -->
+  <text x="20" y="28" class="ttl">Bastardkb Procyon — vanewindward keymap</text>
+  <text x="20" y="46" class="sub">BASE layer · Phase 1 (2026-05-11) · home-row mods + Caps Word + Chordal Hold</text>
+
+  <!-- ============================================================== -->
+  <!-- BASE LAYER GRID                                                  -->
+  <!-- Key size 60×60, gap 5, side gap 70                                -->
+  <!-- Column Y-stagger: c0=0  c1=0  c2=-8  c3=-16  c4=-8  c5=0          -->
+  <!-- Rows: r1=80  r2=145  r3=210  r4=275                                -->
+  <!-- ============================================================== -->
+
+  <!-- LEFT HAND ============================================================ -->
+
+  <!-- Row 1: number row -->
+  <g><rect class="key"   x="20"  y="80"  width="60" height="60"/><text class="lbl"   x="50"  y="118">Esc</text></g>
+  <g><rect class="key"   x="85"  y="80"  width="60" height="60"/><text class="lbl"   x="115" y="118">1</text></g>
+  <g><rect class="key"   x="150" y="72"  width="60" height="60"/><text class="lbl"   x="180" y="110">2</text></g>
+  <g><rect class="key"   x="215" y="64"  width="60" height="60"/><text class="lbl"   x="245" y="102">3</text></g>
+  <g><rect class="key"   x="280" y="72"  width="60" height="60"/><text class="lbl"   x="310" y="110">4</text></g>
+  <g><rect class="key"   x="345" y="80"  width="60" height="60"/><text class="lbl"   x="375" y="118">5</text></g>
+
+  <!-- Row 2: top alpha -->
+  <g><rect class="key"   x="20"  y="145" width="60" height="60"/><text class="lbl"   x="50"  y="183">Tab</text></g>
+  <g><rect class="key"   x="85"  y="145" width="60" height="60"/><text class="lbl"   x="115" y="183">Q</text></g>
+  <g><rect class="key"   x="150" y="137" width="60" height="60"/><text class="lbl"   x="180" y="175">W</text></g>
+  <g><rect class="key"   x="215" y="129" width="60" height="60"/><text class="lbl"   x="245" y="167">E</text></g>
+  <g><rect class="key"   x="280" y="137" width="60" height="60"/><text class="lbl"   x="310" y="175">R</text></g>
+  <g><rect class="key"   x="345" y="145" width="60" height="60"/><text class="lbl"   x="375" y="183">T</text></g>
+
+  <!-- Row 3: HOME row -->
+  <g><rect class="kcaps" x="20"  y="210" width="60" height="60"/><text class="lblsm" x="50"  y="240">Caps</text><text class="lblsm" x="50" y="256">Word</text></g>
+  <g><rect class="khrm"  x="85"  y="210" width="60" height="60"/><text class="lbl"   x="115" y="240">A</text><text class="hold" x="115" y="260">hold = ⌘</text></g>
+  <g><rect class="khrm"  x="150" y="202" width="60" height="60"/><text class="lbl"   x="180" y="232">S</text><text class="hold" x="180" y="252">hold = ⌥</text></g>
+  <g><rect class="khrm"  x="215" y="194" width="60" height="60"/><text class="lbl"   x="245" y="224">D</text><text class="hold" x="245" y="244">hold = ⌃</text></g>
+  <g><rect class="khrm"  x="280" y="202" width="60" height="60"/><text class="lbl"   x="310" y="232">F</text><text class="hold" x="310" y="252">hold = ⇧</text></g>
+  <g><rect class="key"   x="345" y="210" width="60" height="60"/><text class="lbl"   x="375" y="248">G</text></g>
+
+  <!-- Row 4: bottom alpha -->
+  <g><rect class="knomod" x="20" y="275" width="60" height="60"/><text class="lblsm" x="50"  y="313">Ctrl</text></g>
+  <g><rect class="klt"   x="85"  y="275" width="60" height="60"/><text class="lbl"   x="115" y="307">Z</text><text class="holdlt" x="115" y="325">hold → POINTER</text></g>
+  <g><rect class="key"   x="150" y="267" width="60" height="60"/><text class="lbl"   x="180" y="305">X</text></g>
+  <g><rect class="key"   x="215" y="259" width="60" height="60"/><text class="lbl"   x="245" y="297">C</text></g>
+  <g><rect class="key"   x="280" y="267" width="60" height="60"/><text class="lbl"   x="310" y="305">V</text></g>
+  <g><rect class="key"   x="345" y="275" width="60" height="60"/><text class="lbl"   x="375" y="313">B</text></g>
+
+  <!-- LEFT THUMBS -->
+  <g><rect class="kthumb" x="180" y="370" width="60" height="60"/><text class="lblsm" x="210" y="406">Alt</text></g>
+  <g><rect class="klt"    x="245" y="370" width="60" height="60"/><text class="lblsm" x="275" y="398">Bksp</text><text class="holdlt" x="275" y="416">hold → LOWER</text></g>
+  <g><rect class="kthumb" x="310" y="370" width="60" height="60"/><text class="lblsm" x="340" y="406">Space</text></g>
+  <g><rect class="kthumb" x="375" y="370" width="60" height="60"/><text class="lblsm" x="405" y="406">GUI</text></g>
+
+  <!-- RIGHT HAND =========================================================== -->
+  <!-- x offset starts at 475 -->
+
+  <!-- Row 1 -->
+  <g><rect class="key"   x="475" y="80"  width="60" height="60"/><text class="lbl"   x="505" y="118">6</text></g>
+  <g><rect class="key"   x="540" y="72"  width="60" height="60"/><text class="lbl"   x="570" y="110">7</text></g>
+  <g><rect class="key"   x="605" y="64"  width="60" height="60"/><text class="lbl"   x="635" y="102">8</text></g>
+  <g><rect class="key"   x="670" y="72"  width="60" height="60"/><text class="lbl"   x="700" y="110">9</text></g>
+  <g><rect class="key"   x="735" y="80"  width="60" height="60"/><text class="lbl"   x="765" y="118">0</text></g>
+  <g><rect class="key"   x="800" y="80"  width="60" height="60"/><text class="lbl"   x="830" y="118">-</text></g>
+
+  <!-- Row 2 -->
+  <g><rect class="key"   x="475" y="145" width="60" height="60"/><text class="lbl"   x="505" y="183">Y</text></g>
+  <g><rect class="key"   x="540" y="137" width="60" height="60"/><text class="lbl"   x="570" y="175">U</text></g>
+  <g><rect class="key"   x="605" y="129" width="60" height="60"/><text class="lbl"   x="635" y="167">I</text></g>
+  <g><rect class="key"   x="670" y="137" width="60" height="60"/><text class="lbl"   x="700" y="175">O</text></g>
+  <g><rect class="key"   x="735" y="145" width="60" height="60"/><text class="lbl"   x="765" y="183">P</text></g>
+  <g><rect class="key"   x="800" y="145" width="60" height="60"/><text class="lbl"   x="830" y="183">\</text></g>
+
+  <!-- Row 3: HOME row (right) -->
+  <g><rect class="key"   x="475" y="210" width="60" height="60"/><text class="lbl"   x="505" y="248">H</text></g>
+  <g><rect class="khrm"  x="540" y="202" width="60" height="60"/><text class="lbl"   x="570" y="232">J</text><text class="hold" x="570" y="252">hold = ⇧</text></g>
+  <g><rect class="khrm"  x="605" y="194" width="60" height="60"/><text class="lbl"   x="635" y="224">K</text><text class="hold" x="635" y="244">hold = ⌃</text></g>
+  <g><rect class="khrm"  x="670" y="202" width="60" height="60"/><text class="lbl"   x="700" y="232">L</text><text class="hold" x="700" y="252">hold = ⌥</text></g>
+  <g><rect class="khrm"  x="735" y="210" width="60" height="60"/><text class="lbl"   x="765" y="240">;</text><text class="hold" x="765" y="260">hold = ⌘</text></g>
+  <g><rect class="key"   x="800" y="210" width="60" height="60"/><text class="lbl"   x="830" y="248">'</text></g>
+
+  <!-- Row 4 -->
+  <g><rect class="key"   x="475" y="275" width="60" height="60"/><text class="lbl"   x="505" y="313">N</text></g>
+  <g><rect class="key"   x="540" y="267" width="60" height="60"/><text class="lbl"   x="570" y="305">M</text></g>
+  <g><rect class="key"   x="605" y="259" width="60" height="60"/><text class="lbl"   x="635" y="297">,</text></g>
+  <g><rect class="key"   x="670" y="267" width="60" height="60"/><text class="lbl"   x="700" y="305">.</text></g>
+  <g><rect class="klt"   x="735" y="275" width="60" height="60"/><text class="lbl"   x="765" y="307">/</text><text class="holdlt" x="765" y="325">hold → POINTER</text></g>
+  <g><rect class="knomod" x="800" y="275" width="60" height="60"/><text class="lblsm" x="830" y="313">Alt</text></g>
+
+  <!-- RIGHT THUMBS -->
+  <g><rect class="kms"   x="505" y="370" width="60" height="60"/><text class="lblsm" x="535" y="406">MB1</text></g>
+  <g><rect class="kthumb" x="570" y="370" width="60" height="60"/><text class="lblsm" x="600" y="406">Enter</text></g>
+  <g><rect class="klt"   x="635" y="370" width="60" height="60"/><text class="lblsm" x="665" y="398">Del</text><text class="holdlt" x="665" y="416">hold → RAISE</text></g>
+  <g><rect class="kms"   x="700" y="370" width="60" height="60"/><text class="lblsm" x="730" y="406">MB1</text></g>
+
+  <!-- ============================================================== -->
+  <!-- LEGEND                                                            -->
+  <!-- ============================================================== -->
+  <line x1="20" y1="465" x2="920" y2="465" stroke="#ccc" stroke-width="1"/>
+
+  <text x="20" y="490" class="h2">Legend</text>
+
+  <!-- swatches row 1 -->
+  <g><rect class="khrm"  x="20"  y="505" width="22" height="22"/></g>
+  <text x="50" y="521" class="leg">Home-row mod — tap = letter, hold ≥200ms = modifier (⌘ ⌥ ⌃ ⇧)</text>
+
+  <g><rect class="kcaps" x="20"  y="535" width="22" height="22"/></g>
+  <text x="50" y="551" class="leg">Caps Word — tap once, then type a word; word comes out ALL CAPS, auto-disables on space</text>
+
+  <g><rect class="klt"   x="20"  y="565" width="22" height="22"/></g>
+  <text x="50" y="581" class="leg">Layer-tap — tap = letter (Z or /), hold = enter POINTER layer (trackpad controls + boot/EE_CLR)</text>
+
+  <g><rect class="kms"   x="20"  y="595" width="22" height="22"/></g>
+  <text x="50" y="611" class="leg">Mouse button 1 (left click) — baked on rightmost thumbs to avoid Cirque tap drift</text>
+
+  <g><rect class="knomod" x="20" y="625" width="22" height="22"/></g>
+  <text x="50" y="641" class="leg">Plain Ctrl / Alt — kept as same-hand fallback. Bilateral via home-row mods is preferred.</text>
+
+  <!-- The rule -->
+  <text x="20" y="680" class="h2">The rule that makes home-row mods quiet</text>
+  <text x="20" y="700" class="leg">
+    Mod and key must be on opposite hands. e.g. for Cmd+C: hold the right pinky (⌘ on ;) and tap C on the left.
+  </text>
+  <text x="20" y="717" class="legsm">
+    Same-hand chord while a mod-letter is held? Chordal Hold cancels the hold → you get just the letter, never a phantom mod on fast rolls.
+  </text>
+  <text x="20" y="734" class="legsm">
+    Want the mod faster than 200 ms? Press-and-release the other key while still holding the mod-letter — Permissive Hold commits the hold immediately.
+  </text>
+
+  <text x="920" y="752" class="footer" text-anchor="end">layout.svg · vanewindward · regenerate after every keymap edit</text>
+</svg>

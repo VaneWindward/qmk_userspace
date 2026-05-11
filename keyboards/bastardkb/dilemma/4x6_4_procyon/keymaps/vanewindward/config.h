@@ -29,6 +29,17 @@
 #define CIRQUE_PINNACLE_TOUCH_DEBOUNCE 50
 #define POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE
 
+// Home-row mod hardening (Phase 1, 2026-05-11):
+//   TAPPING_TERM    — how long you must hold a HRM key for the mod to fire.
+//   PERMISSIVE_HOLD — if you press AND release another key while a HRM key
+//                     is still held, the HRM resolves as a hold (mod fires).
+//   CHORDAL_HOLD    — if the next key is on the SAME hand as the held HRM,
+//                     the HRM resolves as a tap (no accidental mods on rolls).
+//                     Requires `chordal_hold_layout[]` in keymap.c.
+#define TAPPING_TERM 200
+#define PERMISSIVE_HOLD
+#define CHORDAL_HOLD
+
 #if POINTING_DEVICE_TASK_THROTTLE_MS != 1
 #error "VANE-END: throttle is NOT 1 at end of keymap config.h"
 #endif
